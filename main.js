@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-exec('git describe --match "v[0-9]*.[0-9]*.[0-9]*" --abbrev=0', (tag, rev, err) => {
+exec('git describe --match "v[0-9]*.[0-9]*.[0-9]*" --abbrev=0', (err, tag, stderr) => {
     if (err) {
         console.log('\x1b[33m%s\x1b[0m', 'Could not find any matching tags');
         process.exit(1);
